@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+  <div class="col-md-8">
+    <div class="card p-3">
+      <h3>Hasil Prediksi</h3>
+      <p><strong>{{ label }}</strong></p>
+      <p>Probabilitas Gagal Bayar: <strong>{{ prob }}</strong></p>
+      <a href="/" class="btn btn-outline-secondary">Kembali</a>
+    </div>
+    <div class="mt-3 d-flex gap-3">
+      <img src="{{ plots[0] }}" class="img-fluid rounded shadow-sm" style="max-height:200px;">
+      <img src="{{ plots[1] }}" class="img-fluid rounded shadow-sm" style="max-height:200px;">
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card p-3">
+      <h5>Catatan</h5>
+      <ul>
+        <li>Model: Logistic Regression</li>
+        <li>Scaler: StandardScaler</li>
+        <li>Untuk produksi: perhatikan imbalance, cross-validation, dan data leakage</li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+  <div class="col-md-6">
+    <div class="card p-3 shadow-sm" style="border-left:6px solid #ff7b54;">
+      <h4>Masukkan Data Nasabah</h4>
+      <form method="post" action="/">
+        <!-- Ubah input sesuai FEATURES di app.py -->
+        <div class="mb-2">
+          <label>LIMIT_BAL</label>
+          <input name="LIMIT_BAL" class="form-control" type="number" step="any" value="200000">
+        </div>
+        <div class="mb-2">
+          <label>AGE</label>
+          <input name="AGE" class="form-control" type="number" value="35">
+        </div>
+        <div class="mb-2">
+          <label>BILL_AMT1</label>
+          <input name="BILL_AMT1" class="form-control" type="number" value="50000">
+        </div>
+        <div class="mb-2">
+          <label>BILL_AMT2</label>
+          <input name="BILL_AMT2" class="form-control" type="number" value="45000">
+        </div>
+
+        <button class="btn btn-primary mt-2">Prediksi</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="d-flex gap-2">
+      <img src="{{ images[0] }}" class="img-fluid rounded shadow-sm" style="max-height:180px;">
+      <img src="{{ images[1] }}" class="img-fluid rounded shadow-sm" style="max-height:180px;">
+    </div>
+    <div class="card mt-3 p-3">
+      <h5>Deskripsi Singkat</h5>
+      <p>Ini demo aplikasi prediksi risiko kredit. Gambar di samping dihasilkan oleh kode Python (matplotlib).</p>
+    </div>
+  </div>
+</div>
+{% endblock %}
